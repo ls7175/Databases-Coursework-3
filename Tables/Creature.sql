@@ -58,5 +58,6 @@ create table Creature (
     CONSTRAINT race_fk FOREIGN KEY(race) REFERENCES Race(id),
     CONSTRAINT class_fk FOREIGN KEY(class) REFERENCES Class(id),
     CONSTRAINT loot_fk FOREIGN KEY(loot) REFERENCES Loot(loot_id),
-    CONSTRAINT mapzone_fk FOREIGN KEY(mapzone) REFERENCES MapZone(id)
+    CONSTRAINT mapzone_fk FOREIGN KEY(mapzone) REFERENCES MapZone(id),
+    CONSTRAINT ai_fk FOREIGN KEY(ai) REFERENCES CreatureAI(id),
 );
