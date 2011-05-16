@@ -1,4 +1,4 @@
-create table Class (
+CREATE TABLE Class (
     id INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     CONSTRAINT CreatureClass_pk PRIMARY KEY (id)
