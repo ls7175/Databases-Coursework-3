@@ -1,5 +1,5 @@
 create table Class (
-    id INT NOT NULL UNIQUE,
+    id INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     CONSTRAINT CreatureClass_pk PRIMARY KEY (id)
 )

@@ -1,5 +1,5 @@
 create table Race (
-    id INT NOT NULL UNIQUE,
+    id INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     CONSTRAINT Race_pk PRIMARY KEY (id)
 );

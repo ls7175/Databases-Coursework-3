@@ -1,6 +1,7 @@
 CREATE TABLE CreatureAI (
     id INT NOT NULL,
     ai_file VARCHAR(50) NOT NULL
+    CONSTRAINT CreatureAI_pk  PRIMARY KEY (id)
 );
 
 -- Dwarf AI's

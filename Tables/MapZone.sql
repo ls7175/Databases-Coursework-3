@@ -1,5 +1,5 @@
 CREATE TABLE MapZone (
-    id INT NOT NULL UNIQUE,
+    id INT NOT NULL,
     title VARCHAR(20),
     CONSTRAINT MapZone_pk PRIMARY KEY (id)
 );
