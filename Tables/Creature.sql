@@ -5,7 +5,7 @@
 --);
 
 create table Creature (
-    id              INT NOT NULL UNIQUE,
+    id              INT NOT NULL,
     name            VARCHAR(50) NOT NULL,
     gender          VARCHAR(1) NOT NULL,        -- female == f, male == m
     --type            INT NOT NULL,               -- isnt this the same as class & race?
@@ -51,13 +51,19 @@ create table Creature (
     present_intellect INT NOT NULL,
     present_spirit    INT NOT NULL,
 
+
+    -- Value Checking
+    CONSTRAINT creature_level   CHECK (creature_level >= 0 AND creature_level <= 100),
+    CONSTRAINT damage_check     CHECK (max_damage >= min_damage),
+    CONSTRAINT gold_check       CHECK (max_gold >= min_gold),
+
     -- Primary Key
-    CONSTRAINT Creature_pk PRIMARY KEY (id),
+    CONSTRAINT Creature_pk  PRIMARY KEY (id),
 
     -- Foreign Keys
-    CONSTRAINT race_fk FOREIGN KEY(race) REFERENCES Race(id),
-    CONSTRAINT class_fk FOREIGN KEY(class) REFERENCES Class(id),
-    CONSTRAINT loot_fk FOREIGN KEY(loot) REFERENCES Loot(loot_id),
-    CONSTRAINT mapzone_fk FOREIGN KEY(mapzone) REFERENCES MapZone(id),
-    CONSTRAINT ai_fk FOREIGN KEY(ai) REFERENCES CreatureAI(id),
+    CONSTRAINT race_fk      FOREIGN KEY(race)       REFERENCES Race(id),
+    CONSTRAINT class_fk     FOREIGN KEY(class)      REFERENCES Class(id),
+    CONSTRAINT loot_fk      FOREIGN KEY(loot)       REFERENCES Loot(loot_id),
+    CONSTRAINT mapzone_fk   FOREIGN KEY(mapzone)    REFERENCES MapZone(id),
+    CONSTRAINT ai_fk        FOREIGN KEY(ai)         REFERENCES CreatureAI(id),
 );
